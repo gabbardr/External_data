@@ -1,7 +1,35 @@
 ---
 layout: layout.liquid
-title: 11ty Boilerplate
+title: Famous Quotes
 ---
+<div class="h-screen w-screen flex justify-center items-center bg-emerald-400">
+    <div class="border-4 max-w-96 border-black">
+        <div class=" p-4 mt-6 mb-6 mx-8 bg-gray-300 rounded-md">
+            <div class="mt-1.5">
+                <div x-data="{quote1: $fetchjson('https://dummyjson.com/quotes/22', jsonItem='quote'), 
+                              author: $fetchjson('https://dummyjson.com/quotes/22', jsonItem='author')}">
+                    <h1 class="text-center tracking-normal text-5xl pt-2" x-text="quote1" />
+                    <h2 class="text-center italic tracking-normal mt-2 pb-2 underline decoration-solid" x-text="author" />
+                </div>
+            </div>
+        </div>
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+        <div x-data="{info1: $fetchjson('https://dummyjson.com/users/3', jsonItem='firstName'), 
+              info2: $fetchjson('https://dummyjson.com/users/3', jsonItem='lastName'),
+              info3: $fetchjson('https://dummyjson.com/users/3', jsonItem='phone'),
+              info4: $fetchjson('https://dummyjson.com/users/3', jsonItem='email')}">
+            <div class="bg-yellow-50">
+                <div class="grid grid-cols-2 grid-rows-1 gap-1">
+                    <div>
+                        <h1 class="text-right tracking-normal" x-text="info1" />
+                    </div>
+                    <div>
+                        <h1 class="text-left tracking-normal" x-text="info2" />
+                    </div>
+                </div>
+                    <h1 class="text-center tracking-normal" x-text="info3" />
+                    <h1 class="text-center tracking-normal" x-text="info4" />
+            </div>
+        </div>
+    </div>
+</div>
